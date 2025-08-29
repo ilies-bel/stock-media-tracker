@@ -4,7 +4,6 @@ import { SocialProof } from "@/components/sections/SocialProof"
 import { PainPoints } from "@/components/sections/PainPoints"
 import InteractiveDashboard from "@/components/sections/InteractiveDashboard"
 import { Features } from "@/components/sections/Features"
-import { Pricing } from "@/components/sections/Pricing"
 import { CTA } from "@/components/sections/CTA"
 import { Footer } from "@/components/sections/Footer"
 import { SubscriptionProvider } from "@/lib/contexts/SubscriptionContext"
@@ -19,7 +18,6 @@ export default function HomePage() {
         <InteractiveDashboard />
         <SocialProof />
         <Features />
-        <Pricing />
         <CTA />
         <Footer />
       </div>

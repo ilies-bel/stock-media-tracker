@@ -24,11 +24,6 @@ export function Navigation() {
                   Features
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink className="text-sm font-medium text-muted-foreground hover:text-foreground">
-                  Pricing
-                </NavigationMenuLink>
-              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
