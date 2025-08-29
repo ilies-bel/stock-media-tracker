@@ -2,18 +2,14 @@
 
 import { useEffect, useState } from "react"
 import { Users, TrendingUp, Star } from "lucide-react"
-import { getCreatorCountFormatted, getPercentageFilled } from "@/lib/utils/creator-count"
+import { useSubscription } from "@/lib/contexts/SubscriptionContext"
 
 export function SocialProof() {
   const [isVisible, setIsVisible] = useState(false)
-  const [creatorCount, setCreatorCount] = useState("80")
-  const [percentageFilled, setPercentageFilled] = useState(2)
+  const { creatorCount, percentageFilled, isAnimating } = useSubscription()
 
   useEffect(() => {
     setIsVisible(true)
-    // Update with actual dynamic count after component mounts (client-side)
-    setCreatorCount(getCreatorCountFormatted())
-    setPercentageFilled(getPercentageFilled())
   }, [])
 
   const stats = [
@@ -64,9 +60,9 @@ export function SocialProof() {
                     stat.highlight ? "text-primary" : "text-muted-foreground"
                   }`} />
                 </div>
-                <div className={`text-3xl font-bold ${
+                <div className={`text-3xl font-bold transition-all duration-500 ${
                   stat.highlight ? "text-primary" : "text-foreground"
-                }`}>
+                } ${stat.highlight && isAnimating ? "scale-110 animate-pulse" : ""}`}>
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">
@@ -94,7 +90,11 @@ export function SocialProof() {
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-primary">{creatorCount}</p>
+                  <p className={`text-2xl font-bold text-primary transition-all duration-500 ${
+                    isAnimating ? "scale-110 animate-pulse" : ""
+                  }`}>
+                    {creatorCount}
+                  </p>
                   <p className="text-sm text-muted-foreground">creators joined</p>
                 </div>
               </div>

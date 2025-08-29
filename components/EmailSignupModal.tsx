@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Mail, Sparkles } from "lucide-react"
+import { useSubscription } from "@/lib/contexts/SubscriptionContext"
 
 interface EmailSignupModalProps {
   open: boolean
@@ -22,6 +23,7 @@ export function EmailSignupModal({ open, onOpenChange }: EmailSignupModalProps) 
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const { incrementCount } = useSubscription()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,6 +34,9 @@ export function EmailSignupModal({ open, onOpenChange }: EmailSignupModalProps) 
     
     setIsSubmitting(false)
     setIsSuccess(true)
+    
+    // Increment the count with animation
+    incrementCount()
     
     // Reset and close after success
     setTimeout(() => {
