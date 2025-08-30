@@ -32,7 +32,7 @@ export function SocialProof() {
   ]
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section id="social-proof" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-12">

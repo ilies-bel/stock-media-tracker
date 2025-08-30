@@ -1,0 +1,11 @@
+<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- KeywordLens Icon Only -->
+  <rect x="0" y="0" width="50" height="50" rx="10" fill="#EC6547"/>
+  <g transform="translate(25, 25)">
+    <!-- Simplified white icon for dark background -->
+    <path d="M 0,-15 C 8,-15 15,-8 15,0 L 8,0 C 8,-4 4,-8 0,-8 C -4,-8 -8,-4 -8,0 L -15,0 C -15,-8 -8,-15 0,-15 Z" fill="white" transform="rotate(0)"/>
+    <path d="M 0,-15 C 8,-15 15,-8 15,0 L 8,0 C 8,-4 4,-8 0,-8 C -4,-8 -8,-4 -8,0 L -15,0 C -15,-8 -8,-15 0,-15 Z" fill="white" opacity="0.9" transform="rotate(90)"/>
+    <path d="M 0,-15 C 8,-15 15,-8 15,0 L 8,0 C 8,-4 4,-8 0,-8 C -4,-8 -8,-4 -8,0 L -15,0 C -15,-8 -8,-15 0,-15 Z" fill="white" opacity="0.8" transform="rotate(180)"/>
+    <path d="M 0,-15 C 8,-15 15,-8 15,0 L 8,0 C 8,-4 4,-8 0,-8 C -4,-8 -8,-4 -8,0 L -15,0 C -15,-8 -8,-15 0,-15 Z" fill="white" opacity="0.9" transform="rotate(270)"/>
+  </g>
+</svg>
