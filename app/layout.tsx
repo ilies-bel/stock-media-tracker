@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   description:
     "Optimize your stock photo keywords for better discoverability and sales with AI-powered keyword planning.",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: { url: '/icon-192.png', sizes: '192x192' },
+  },
 }
 
 export default function RootLayout({
