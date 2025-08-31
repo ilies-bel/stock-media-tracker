@@ -10,7 +10,9 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
-    "test:e2e:report": "playwright show-report"
+    "test:e2e:report": "playwright show-report",
+    "test:responsive": "playwright test e2e/responsive-visual-test.spec.ts",
+    "report:responsive": "node scripts/generate-responsive-report.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
