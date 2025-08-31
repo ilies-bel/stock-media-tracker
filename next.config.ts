@@ -1,7 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig: import('next').NextConfig = {
+import {NextConfig} from "next";
+
+const isProd = process.env.NODE_ENV === 'production';
+
+const nextConfig: NextConfig = {
     output: 'export',
     trailingSlash: true,
+    basePath: isProd ? '/stock-media-tracker' : '',
+    assetPrefix: isProd ? '/stock-media-tracker/' : '',
     images: {
         unoptimized: true
     }

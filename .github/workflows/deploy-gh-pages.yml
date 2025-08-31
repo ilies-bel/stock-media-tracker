@@ -27,16 +27,34 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
-
       - name: Install dependencies
         run: npm ci
 
+      - name: Clean previous build
+        run: |
+          rm -rf .next out
+          echo "Cleaned .next and out directories"
+          
+      - name: Debug Next.js config
+        run: |
+          echo "Next.js configuration:"
+          cat next.config.ts
+          echo "Package.json build script:"
+          grep -A 5 -B 5 '"build"' package.json
+          
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          echo "Running Next.js build..."
+          npm run build
+          echo "Build completed"
+          echo "Next.js version:"
+          npx next --version
+          echo "Contents of current directory:"
+          ls -la
+          echo "Contents of .next directory:"
+          ls -la .next/ || echo "No .next directory found"
+          echo "Checking if out directory was created:"
+          ls -la out/ || echo "No out directory found"
         env:
           NODE_ENV: production
         
@@ -52,6 +70,9 @@ jobs:
             exit 1
           fi
 
+      - name: Setup Pages (after build)
+        uses: actions/configure-pages@v4
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
