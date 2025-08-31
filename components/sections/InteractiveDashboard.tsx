@@ -1,17 +1,15 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
-import { Target, Hash, Calendar, Users, ArrowUp, Eye } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { EmailSignupModal } from "@/components/EmailSignupModal"
+import React, {useEffect, useState} from 'react'
+import {Calendar, Eye, Hash, Target, Users} from 'lucide-react'
+import {EmailSignupModal} from "@/components/EmailSignupModal"
 
 // Dashboard components
-import { DashboardHeader } from "@/components/dashboard/DashboardHeader"
-import { StatsCards } from "@/components/dashboard/StatsCards"
-import { OpportunityRadar } from "@/components/dashboard/OpportunityRadar"
-import { KeywordGenerator } from "@/components/dashboard/KeywordGenerator"
-import { SeasonalPlanner } from "@/components/dashboard/SeasonalPlanner"
-import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar"
+import {DashboardHeader} from "@/components/dashboard/DashboardHeader"
+import {OpportunityRadarTab} from "@/components/dashboard/OpportunityRadarTab"
+import {KeywordResearchTab} from "@/components/dashboard/KeywordResearchTab"
+import {SeasonalPlannerTab} from "@/components/dashboard/SeasonalPlannerTab"
+import {CompetitionAnalysisTab} from "@/components/dashboard/CompetitionAnalysisTab"
 
 const InteractiveDashboard = () => {
     const [activeFeature, setActiveFeature] = useState('opportunities')
@@ -92,7 +90,8 @@ const InteractiveDashboard = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Section Header */}
                     <div className="text-center mb-12">
-                        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <div
+                            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
                             <Eye className="w-4 h-4"/>
                             Live Dashboard Preview
                         </div>
@@ -104,8 +103,8 @@ const InteractiveDashboard = () => {
                         </p>
                     </div>
 
-                    {/* Feature Tabs - Compact Horizontal */}
-                    <div className="flex flex-wrap justify-center gap-3 mb-6">
+                    {/* Enhanced Feature Tabs */}
+                    <div className="flex justify-center gap-2 mb-8 ">
                         {features.map((feature) => (
                             <button
                                 key={feature.id}
@@ -114,17 +113,28 @@ const InteractiveDashboard = () => {
                                     setIsAutoPlaying(false)
                                 }}
                                 className={`
-                                    relative flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300
+                                    relative flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-300 whitespace-nowrap
                                     ${activeFeature === feature.id
-                                        ? 'bg-primary text-primary-foreground shadow-lg scale-105'
-                                        : 'bg-background text-foreground hover:bg-muted border border-border'
-                                    }
+                                    ? 'bg-primary text-primary-foreground shadow-lg ring-2 ring-primary/50'
+                                    : 'bg-background text-foreground hover:bg-muted border border-border hover:border-primary/30'
+                                }
                                 `}
                             >
-                                {feature.icon}
-                                <span className="text-sm">{feature.label}</span>
+                                <div className={`
+                                    p-1.5 rounded-md transition-colors
+                                    ${activeFeature === feature.id
+                                    ? 'bg-primary-foreground/20'
+                                    : 'bg-primary/10'
+                                }
+                                `}>
+                                    {React.cloneElement(feature.icon, {
+                                        className: `w-4 h-4 ${activeFeature === feature.id ? 'text-primary-foreground' : 'text-primary'}`
+                                    })}
+                                </div>
+                                <span className="text-sm font-medium">{feature.label}</span>
                                 {activeFeature === feature.id && (
-                                    <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse"/>
+                                    <div
+                                        className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"/>
                                 )}
                             </button>
                         ))}
@@ -149,74 +159,43 @@ const InteractiveDashboard = () => {
                         </div>
 
                         {/* Dashboard Content */}
-                        <div className="bg-background rounded-b-xl shadow-2xl overflow-hidden relative">
-                            <DashboardHeader />
-                            
-                            <StatsCards isHighlighted={currentFeature?.highlights.includes('stats-cards') || false} />
+                        <div className="bg-background rounded-b-xl shadow-2xl overflow-hidden relative min-h-[700px]">
+                            <DashboardHeader/>
 
-                            <div className="px-8 pb-8">
-                                <div className="grid grid-cols-3 gap-6">
-                                    {/* Main Content Area */}
-                                    <div className="col-span-2 space-y-6">
-                                        <OpportunityRadar 
-                                            isHighlighted={currentFeature?.highlights.includes('opportunity-radar') || false}
-                                            nicheAnalyzerHighlighted={currentFeature?.highlights.includes('niche-analyzer') || false}
-                                        />
+                            {/* Tab Content Area - Full Screen */}
+                            <div className="relative">
+                                {/* Smooth transitions between tabs */}
+                                <div
+                                    className={`transition-opacity duration-500 ${activeFeature === 'opportunities' ? 'opacity-100' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+                                    {activeFeature === 'opportunities' && (
+                                        <OpportunityRadarTab/>
+                                    )}
+                                </div>
 
-                                        <KeywordGenerator 
-                                            isHighlighted={currentFeature?.highlights.includes('keyword-generator') || false}
-                                            platformOptimizerHighlighted={currentFeature?.highlights.includes('platform-optimizer') || false}
-                                        />
+                                <div
+                                    className={`transition-opacity duration-500 ${activeFeature === 'keywords' ? 'opacity-100' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+                                    {activeFeature === 'keywords' && (
+                                        <KeywordResearchTab/>
+                                    )}
+                                </div>
 
-                                        <SeasonalPlanner 
-                                            isHighlighted={currentFeature?.highlights.includes('seasonal-calendar') || false}
-                                            upcomingEventsHighlighted={currentFeature?.highlights.includes('upcoming-events') || false}
-                                        />
-                                    </div>
+                                <div
+                                    className={`transition-opacity duration-500 ${activeFeature === 'seasonal' ? 'opacity-100' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+                                    {activeFeature === 'seasonal' && (
+                                        <SeasonalPlannerTab/>
+                                    )}
+                                </div>
 
-                                    {/* Sidebar */}
-                                    <DashboardSidebar 
-                                        competitorTrackingHighlighted={currentFeature?.highlights.includes('competitor-tracking') || false}
-                                        successPatternsHighlighted={currentFeature?.highlights.includes('success-patterns') || false}
-                                    />
+                                <div
+                                    className={`transition-opacity duration-500 ${activeFeature === 'competition' ? 'opacity-100' : 'opacity-0 absolute inset-0 pointer-events-none'}`}>
+                                    {activeFeature === 'competition' && (
+                                        <CompetitionAnalysisTab/>
+                                    )}
                                 </div>
                             </div>
-
-                            {/* Floating Callouts */}
-                            {currentFeature?.callouts.map((callout) => (
-                                <div
-                                    key={callout.id}
-                                    className={`
-                                        absolute ${callout.position} 
-                                        bg-primary text-primary-foreground
-                                        px-4 py-2 rounded-lg shadow-xl 
-                                        animate-pulse z-10
-                                        after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:transform after:-translate-x-1/2
-                                        after:border-4 after:border-transparent after:border-t-primary
-                                    `}
-                                >
-                                    <span className="text-sm font-bold">{callout.text}</span>
-                                </div>
-                            ))}
                         </div>
                     </div>
 
-                    {/* CTA Section */}
-                    <div className="text-center mt-12">
-                        <p className="text-lg text-muted-foreground mb-6">
-                            Join 2,400+ photographers earning 5x more with KeywordLens
-                        </p>
-                        <div className="flex gap-4 justify-center">
-                            <Button size="lg" onClick={() => setEmailModalOpen(true)}>
-                                Start Free Trial
-                                <ArrowUp className="ml-2 h-4 w-4"/>
-                            </Button>
-                            <Button size="lg" variant="outline">
-                                Watch Demo
-                                <Eye className="ml-2 h-4 w-4"/>
-                            </Button>
-                        </div>
-                    </div>
                 </div>
             </section>
 

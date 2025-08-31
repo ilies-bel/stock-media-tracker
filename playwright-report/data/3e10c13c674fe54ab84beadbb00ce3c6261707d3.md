@@ -1,0 +1,421 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - img [ref=e7]
+          - generic [ref=e13]: KeywordLens
+        - navigation "Main" [ref=e14]:
+          - list [ref=e16]:
+            - listitem [ref=e17]:
+              - generic [ref=e18] [cursor=pointer]: Features
+            - listitem [ref=e19]:
+              - generic [ref=e20] [cursor=pointer]: Dashboard
+            - listitem [ref=e21]:
+              - generic [ref=e22] [cursor=pointer]: Testimonials
+            - listitem [ref=e23]:
+              - generic [ref=e24] [cursor=pointer]: Get Started
+        - button "Get Early Access" [ref=e26]:
+          - text: Get Early Access
+          - img
+    - generic [ref=e27]:
+      - generic [ref=e30]:
+        - heading "Find Untapped Stock Photo Opportunities Before Your Competition" [level=1] [ref=e31]:
+          - text: Find
+          - generic [ref=e32]: Untapped
+          - text: Stock Photo Opportunities Before Your Competition
+        - paragraph [ref=e33]:
+          - text: Stop guessing what to shoot next. Our AI analyzes millions of searches across major stock platforms to reveal
+          - generic [ref=e34]: high-demand, low-competition
+          - text: niches that actually sell. Plan smarter, shoot strategically,
+          - generic [ref=e35]: earn more
+          - text: .
+        - button "Get Early Access" [ref=e37]:
+          - text: Get Early Access
+          - img
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - text: Limited spots available
+          - generic [ref=e42]:
+            - img [ref=e43]
+            - text: Be first to know
+          - generic [ref=e45]:
+            - img [ref=e46]
+            - text: Exclusive insights
+      - generic [ref=e50]:
+        - heading "Sound familiar?" [level=2] [ref=e51]
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - img [ref=e55]
+            - generic [ref=e58]:
+              - heading "Spending hours researching what to shoot?" [level=3] [ref=e59]
+              - paragraph [ref=e60]: Stop wasting time guessing. Get data-driven insights on what buyers actually want.
+          - generic [ref=e61]:
+            - img [ref=e63]
+            - generic [ref=e70]:
+              - heading "Uploading photos that never sell?" [level=3] [ref=e71]
+              - paragraph [ref=e72]: Discover exactly what keywords and subjects have high demand before you shoot.
+          - generic [ref=e73]:
+            - img [ref=e75]
+            - generic [ref=e78]:
+              - heading "Missing trending topics?" [level=3] [ref=e79]
+              - paragraph [ref=e80]: Stay ahead with real-time alerts on emerging trends and seasonal opportunities.
+        - paragraph [ref=e82]: There's a better way. Let AI analyze the market for you.
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - img [ref=e87]
+            - text: Live Dashboard Preview
+          - heading "Your Command Center For Stock Success" [level=2] [ref=e90]:
+            - text: Your
+            - generic [ref=e91]: Command Center
+            - text: For Stock Success
+          - paragraph [ref=e92]: See how top photographers are earning 5x more by shooting what actually sells
+        - generic [ref=e93]:
+          - button "Find Profitable Niches" [ref=e94]:
+            - img [ref=e95]
+            - generic [ref=e99]: Find Profitable Niches
+          - button "Smart Keyword Research" [ref=e100]:
+            - img [ref=e101]
+            - generic [ref=e106]: Smart Keyword Research
+          - button "Seasonal Planning" [ref=e107]:
+            - img [ref=e108]
+            - generic [ref=e113]: Seasonal Planning
+          - button "Competition Analysis" [ref=e114]:
+            - img [ref=e115]
+            - generic [ref=e120]: Competition Analysis
+        - paragraph [ref=e123]: Track top performers and find gaps in their portfolios
+        - generic [ref=e130]:
+          - navigation [ref=e131]:
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - img [ref=e135]
+                - generic [ref=e141]: KeywordLens
+              - generic [ref=e142]:
+                - generic [ref=e143]: Dashboard
+                - generic [ref=e144]: Portfolio
+                - generic [ref=e145]: Analytics
+                - generic [ref=e146]: Calendar
+              - generic [ref=e147]:
+                - generic [ref=e150]: Live Sync
+                - button "Bulk Upload" [ref=e151]:
+                  - img
+                  - text: Bulk Upload
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - heading "Market Intelligence Dashboard" [level=1] [ref=e155]
+              - paragraph [ref=e156]: Real-time insights from 7 major stock platforms
+            - generic [ref=e157]:
+              - img [ref=e158]
+              - generic [ref=e162]: 3 new high-value opportunities detected!
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - generic [ref=e166]: Monthly Revenue
+              - generic [ref=e167]: $4,832
+              - generic [ref=e168]: +42% vs last month
+            - generic [ref=e169]:
+              - generic [ref=e171]: Portfolio Size
+              - generic [ref=e172]: 2,457
+              - generic [ref=e173]: +156 this week
+            - generic [ref=e174]:
+              - generic [ref=e176]: Keyword Score
+              - generic [ref=e177]: "92.5"
+              - generic [ref=e178]: Top 5% percentile
+            - generic [ref=e179]:
+              - generic [ref=e181]: Downloads/Day
+              - generic [ref=e182]: "47.3"
+              - generic [ref=e183]: +18% growth
+            - generic [ref=e184]:
+              - generic [ref=e186]: Platform Reach
+              - generic [ref=e187]: 7/7
+              - generic [ref=e188]: All synced
+          - generic [ref=e190]:
+            - generic [ref=e191]:
+              - generic [ref=e193]:
+                - heading "Opportunity Radar 3 HOT" [level=3] [ref=e194]:
+                  - text: Opportunity Radar
+                  - generic [ref=e195]: 3 HOT
+                - paragraph [ref=e196]: High-value niches with exceptional ROI potential
+                - generic [ref=e197]:
+                  - textbox "Search niches, trends, or keywords..." [ref=e198]: sustainable technology
+                  - button "Analyze" [ref=e199]:
+                    - img
+                    - text: Analyze
+                - generic [ref=e200]:
+                  - generic [ref=e201]:
+                    - generic [ref=e202]:
+                      - generic [ref=e203]:
+                        - heading "AI-Powered Healthcare" [level=4] [ref=e204]
+                        - paragraph [ref=e205]: Medical technology, telemedicine, AI diagnosis
+                      - generic [ref=e206]: HIGH VALUE
+                    - generic [ref=e207]:
+                      - generic [ref=e208]:
+                        - generic [ref=e209]: Demand
+                        - generic [ref=e210]: +890%
+                      - generic [ref=e211]:
+                        - generic [ref=e212]: Competition
+                        - generic [ref=e213]: Low (23)
+                      - generic [ref=e214]:
+                        - generic [ref=e215]: Est. Revenue
+                        - generic [ref=e216]: $3,450/mo
+                      - generic [ref=e217]:
+                        - generic [ref=e218]: ROI Score
+                        - generic [ref=e219]: 96/100
+                  - generic [ref=e220]:
+                    - generic [ref=e221]:
+                      - generic [ref=e222]:
+                        - heading "Remote Team Collaboration" [level=4] [ref=e223]
+                        - paragraph [ref=e224]: Virtual meetings, hybrid work, team building
+                      - generic [ref=e225]: GROWING
+                    - generic [ref=e226]:
+                      - generic [ref=e227]:
+                        - generic [ref=e228]: Demand
+                        - generic [ref=e229]: +340%
+                      - generic [ref=e230]:
+                        - generic [ref=e231]: Competition
+                        - generic [ref=e232]: Medium (156)
+                      - generic [ref=e233]:
+                        - generic [ref=e234]: Est. Revenue
+                        - generic [ref=e235]: $1,820/mo
+                      - generic [ref=e236]:
+                        - generic [ref=e237]: ROI Score
+                        - generic [ref=e238]: 78/100
+                  - generic [ref=e239]:
+                    - generic [ref=e240]:
+                      - generic [ref=e241]:
+                        - heading "Sustainable Fashion Tech" [level=4] [ref=e242]
+                        - paragraph [ref=e243]: Eco materials, circular economy, fashion tech
+                      - generic [ref=e244]: EMERGING
+                    - generic [ref=e245]:
+                      - generic [ref=e246]:
+                        - generic [ref=e247]: Demand
+                        - generic [ref=e248]: +125%
+                      - generic [ref=e249]:
+                        - generic [ref=e250]: Competition
+                        - generic [ref=e251]: Very Low (8)
+                      - generic [ref=e252]:
+                        - generic [ref=e253]: Est. Revenue
+                        - generic [ref=e254]: $980/mo
+                      - generic [ref=e255]:
+                        - generic [ref=e256]: ROI Score
+                        - generic [ref=e257]: 82/100
+              - generic [ref=e259]:
+                - heading "Smart Keyword Generator" [level=3] [ref=e260]:
+                  - img [ref=e261]
+                  - text: Smart Keyword Generator
+                - generic [ref=e266]:
+                  - generic [ref=e267]:
+                    - heading "Platform Optimization" [level=4] [ref=e268]
+                    - generic [ref=e269]:
+                      - generic [ref=e270]:
+                        - generic [ref=e271]: Shutterstock
+                        - generic [ref=e272]: 25 keywords
+                      - generic [ref=e273]:
+                        - generic [ref=e274]: Adobe Stock
+                        - generic [ref=e275]: 49 keywords
+                      - generic [ref=e276]:
+                        - generic [ref=e277]: Getty Images
+                        - generic [ref=e278]: 30 keywords
+                  - generic [ref=e279]:
+                    - heading "Keyword Performance" [level=4] [ref=e280]
+                    - generic [ref=e281]:
+                      - generic [ref=e282]:
+                        - generic [ref=e283]: Search Volume
+                        - generic [ref=e284]: 847K/month
+                      - generic [ref=e285]:
+                        - generic [ref=e286]: Competition Score
+                        - generic [ref=e287]: Low (23)
+                      - generic [ref=e288]:
+                        - generic [ref=e289]: Conversion Rate
+                        - generic [ref=e290]: 4.7%
+                      - generic [ref=e291]:
+                        - generic [ref=e292]: Est. CTR
+                        - generic [ref=e293]: +67%
+              - generic [ref=e295]:
+                - heading "Seasonal Planner" [level=3] [ref=e296]:
+                  - img [ref=e297]
+                  - text: Seasonal Planner
+                - generic [ref=e302]:
+                  - generic [ref=e303]:
+                    - generic [ref=e304]:
+                      - generic [ref=e305]:
+                        - generic [ref=e306]: FEB
+                        - generic [ref=e307]: "14"
+                      - generic [ref=e308]:
+                        - generic [ref=e309]: Valentine's Day
+                        - generic [ref=e310]: Romance, couples, gifts, hearts
+                    - generic [ref=e311]:
+                      - generic [ref=e312]: +890%
+                      - generic [ref=e313]: Upload by Jan 15
+                  - generic [ref=e314]:
+                    - generic [ref=e315]:
+                      - generic [ref=e316]:
+                        - generic [ref=e317]: MAR
+                        - generic [ref=e318]: "17"
+                      - generic [ref=e319]:
+                        - generic [ref=e320]: St. Patrick's Day
+                        - generic [ref=e321]: Irish culture, green, celebrations
+                    - generic [ref=e322]:
+                      - generic [ref=e323]: +420%
+                      - generic [ref=e324]: Upload by Feb 20
+            - generic [ref=e325]:
+              - generic [ref=e326]:
+                - heading "AI Recommendations" [level=4] [ref=e327]
+                - generic [ref=e328]:
+                  - generic [ref=e331]:
+                    - paragraph [ref=e332]: Quick Win Detected!
+                    - paragraph [ref=e333]: Add "sustainable" to 47 images for +23% visibility
+                  - generic [ref=e336]:
+                    - paragraph [ref=e337]: Trending Alert
+                    - paragraph [ref=e338]: "\"AI workplace\" searches up 340% this week"
+                - button "View All Suggestions" [ref=e339]
+              - generic [ref=e340]:
+                - heading "Top Performers" [level=4] [ref=e341]
+                - generic [ref=e342]:
+                  - generic [ref=e343]:
+                    - generic [ref=e344]:
+                      - generic [ref=e346]: "#1"
+                      - generic [ref=e347]:
+                        - paragraph [ref=e348]: PhotoPro_USA
+                        - paragraph [ref=e349]: 12.4k photos
+                    - generic [ref=e350]:
+                      - paragraph [ref=e351]: $24.5k
+                      - paragraph [ref=e352]: +18%
+                  - generic [ref=e353]:
+                    - generic [ref=e354]:
+                      - generic [ref=e356]: "#2"
+                      - generic [ref=e357]:
+                        - paragraph [ref=e358]: CreativeStock
+                        - paragraph [ref=e359]: 8.7k photos
+                    - generic [ref=e360]:
+                      - paragraph [ref=e361]: $18.2k
+                      - paragraph [ref=e362]: +12%
+              - generic [ref=e363]:
+                - heading "Success Patterns" [level=4] [ref=e364]
+                - generic [ref=e365]:
+                  - generic [ref=e366]:
+                    - generic [ref=e367]: Upload frequency
+                    - generic [ref=e368]: Daily
+                  - generic [ref=e369]:
+                    - generic [ref=e370]: Avg keywords
+                    - generic [ref=e371]: "42"
+                  - generic [ref=e372]:
+                    - generic [ref=e373]: Best time
+                    - generic [ref=e374]: Tue 3PM
+                  - generic [ref=e375]:
+                    - generic [ref=e376]: Top style
+                    - generic [ref=e377]: Minimal
+              - generic [ref=e378]:
+                - heading "Quick Actions" [level=4] [ref=e379]
+                - generic [ref=e380]:
+                  - button "Generate Report" [ref=e381]:
+                    - img
+                    - text: Generate Report
+                  - button "Bulk Optimize" [ref=e382]:
+                    - img
+                    - text: Bulk Optimize
+                  - button "Schedule Upload" [ref=e383]:
+                    - img
+                    - text: Schedule Upload
+          - generic [ref=e385]: Top seller uploaded!
+          - generic [ref=e387]: Missing this style!
+        - generic [ref=e388]:
+          - paragraph [ref=e389]: Join 2,400+ photographers earning 5x more with KeywordLens
+          - generic [ref=e390]:
+            - button "Start Free Trial" [ref=e391]:
+              - text: Start Free Trial
+              - img
+            - button "Watch Demo" [ref=e392]:
+              - text: Watch Demo
+              - img
+      - generic [ref=e395]:
+        - generic [ref=e396]:
+          - heading "Join thousands of creators getting early access" [level=2] [ref=e397]
+          - paragraph [ref=e398]: Photographers and content creators worldwide are securing their spot
+        - generic [ref=e399]:
+          - generic [ref=e400]:
+            - img [ref=e402]
+            - generic [ref=e407]: "28"
+            - generic [ref=e408]: Beta testers
+          - generic [ref=e409]:
+            - img [ref=e411]
+            - generic [ref=e414]: 2.3M+
+            - generic [ref=e415]: Keywords found
+          - generic [ref=e416]:
+            - img [ref=e418]
+            - generic [ref=e420]: "4.9"
+            - generic [ref=e421]: Early tester rating
+        - generic [ref=e423]:
+          - generic [ref=e425]: Limited Early Access
+          - generic [ref=e426]:
+            - generic [ref=e427]:
+              - paragraph [ref=e428]: Spots filling fast
+              - paragraph [ref=e429]:
+                - text: We're accepting
+                - generic [ref=e430]: only 500 early adopters
+                - text: to ensure quality feedback
+            - generic [ref=e431]:
+              - paragraph [ref=e432]: "187"
+              - paragraph [ref=e433]: creators joined
+          - generic [ref=e435]:
+            - generic [ref=e436]: Early access spots taken
+            - generic [ref=e437]: 37%
+      - generic [ref=e442]:
+        - heading "Ready to boost your stock photo sales?" [level=2] [ref=e443]
+        - paragraph [ref=e444]: Join thousands of photographers who have increased their earnings with KeywordLens
+        - button "Get Early Access" [ref=e446]:
+          - text: Get Early Access
+          - img
+      - contentinfo [ref=e447]:
+        - generic [ref=e448]:
+          - generic [ref=e449]:
+            - generic [ref=e450]:
+              - generic [ref=e451]:
+                - img [ref=e452]
+                - generic [ref=e458]: KeywordLens
+              - paragraph [ref=e459]: AI-powered keyword optimization for stock photographers
+            - generic [ref=e460]:
+              - heading "Product" [level=3] [ref=e461]
+              - list [ref=e462]:
+                - listitem [ref=e463]:
+                  - link "Features" [ref=e464] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e465]:
+                  - link "Pricing" [ref=e466] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e467]:
+                  - link "API" [ref=e468] [cursor=pointer]:
+                    - /url: "#"
+            - generic [ref=e469]:
+              - heading "Company" [level=3] [ref=e470]
+              - list [ref=e471]:
+                - listitem [ref=e472]:
+                  - link "About" [ref=e473] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e474]:
+                  - link "Blog" [ref=e475] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e476]:
+                  - link "Careers" [ref=e477] [cursor=pointer]:
+                    - /url: "#"
+            - generic [ref=e478]:
+              - heading "Support" [level=3] [ref=e479]
+              - list [ref=e480]:
+                - listitem [ref=e481]:
+                  - link "Help Center" [ref=e482] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e483]:
+                  - link "Contact" [ref=e484] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e485]:
+                  - link "Privacy" [ref=e486] [cursor=pointer]:
+                    - /url: "#"
+          - generic [ref=e487]: © 2024 KeywordLens. All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=e493] [cursor=pointer]:
+    - img [ref=e494] [cursor=pointer]
+  - alert [ref=e498]
+```
