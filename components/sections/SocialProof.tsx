@@ -33,7 +33,7 @@ export function SocialProof() {
 
     return (
         <section id="social-proof" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-6xl">
                     <div className="text-center mb-12">
                         <h2 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-balance">
@@ -44,7 +44,7 @@ export function SocialProof() {
                         </p>
                     </div>
 
-                    <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
+                    <div className="grid grid-cols-3 gap-4 sm:gap-8">
                         {stats.map((stat, index) => (
                             <div
                                 key={index}
@@ -53,19 +53,19 @@ export function SocialProof() {
                                 }`}
                                 style={{transitionDelay: `${index * 100}ms`}}
                             >
-                                <div className={`inline-flex h-12 w-12 items-center justify-center rounded-lg ${
+                                <div className={`inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg ${
                                     stat.highlight ? "bg-primary/10" : "bg-muted"
-                                } mb-4`}>
-                                    <stat.icon className={`h-6 w-6 ${
+                                } mb-2 sm:mb-4`}>
+                                    <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${
                                         stat.highlight ? "text-primary" : "text-muted-foreground"
                                     }`}/>
                                 </div>
-                                <div className={`text-3xl font-bold transition-all duration-500 ${
+                                <div className={`text-xl sm:text-3xl font-bold transition-all duration-500 ${
                                     stat.highlight ? "text-primary" : "text-foreground"
                                 } ${stat.highlight && isAnimating ? "scale-110 animate-pulse" : ""}`}>
                                     {stat.value}
                                 </div>
-                                <div className="text-sm text-muted-foreground mt-1">
+                                <div className="text-xs sm:text-sm text-muted-foreground mt-0.5 sm:mt-1">
                                     {stat.label}
                                 </div>
                             </div>

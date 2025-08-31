@@ -87,7 +87,7 @@ const InteractiveDashboard = () => {
     return (
         <>
             <section id="dashboard" className="py-20 bg-muted/30">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto px-2 sm:px-6 lg:px-8">
                     {/* Section Header */}
                     <div className="text-center mb-12">
                         <div
@@ -104,7 +104,7 @@ const InteractiveDashboard = () => {
                     </div>
 
                     {/* Enhanced Feature Tabs */}
-                    <div className="flex justify-center gap-2 mb-8 ">
+                    <div className="grid grid-cols-2 md:flex md:justify-center gap-2 mb-8 px-2 md:px-0">
                         {features.map((feature) => (
                             <button
                                 key={feature.id}
@@ -113,7 +113,7 @@ const InteractiveDashboard = () => {
                                     setIsAutoPlaying(false)
                                 }}
                                 className={`
-                                    relative flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-300 whitespace-nowrap
+                                    relative flex items-center gap-1.5 px-3 py-2.5 rounded-lg font-medium transition-all duration-300
                                     ${activeFeature === feature.id
                                     ? 'bg-primary text-primary-foreground shadow-lg ring-2 ring-primary/50'
                                     : 'bg-background text-foreground hover:bg-muted border border-border hover:border-primary/30'
@@ -121,17 +121,17 @@ const InteractiveDashboard = () => {
                                 `}
                             >
                                 <div className={`
-                                    p-1.5 rounded-md transition-colors
+                                    p-1 rounded-md transition-colors flex-shrink-0
                                     ${activeFeature === feature.id
                                     ? 'bg-primary-foreground/20'
                                     : 'bg-primary/10'
                                 }
                                 `}>
                                     {React.cloneElement(feature.icon, {
-                                        className: `w-4 h-4 ${activeFeature === feature.id ? 'text-primary-foreground' : 'text-primary'}`
+                                        className: `w-3.5 h-3.5 ${activeFeature === feature.id ? 'text-primary-foreground' : 'text-primary'}`
                                     })}
                                 </div>
-                                <span className="text-sm font-medium">{feature.label}</span>
+                                <span className="text-xs md:text-sm font-medium truncate">{feature.label}</span>
                                 {activeFeature === feature.id && (
                                     <div
                                         className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"/>

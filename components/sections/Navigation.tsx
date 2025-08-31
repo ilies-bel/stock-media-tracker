@@ -8,23 +8,25 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
-import { Sparkles } from "lucide-react"
+import { Sparkles, Menu, X } from "lucide-react"
 import { EmailSignupModal } from "@/components/EmailSignupModal"
 
 export function Navigation() {
   const [emailModalOpen, setEmailModalOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+      setMobileMenuOpen(false) // Close mobile menu after navigation
     }
   }
 
   return (
     <>
       <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
               <svg width="32" height="32" viewBox="0 0 50 50" className="h-8 w-8">
@@ -66,7 +68,8 @@ export function Navigation() {
               <span className="font-serif text-xl font-bold text-foreground">KeywordLens</span>
             </div>
 
-            <NavigationMenu>
+            {/* Desktop Navigation */}
+            <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuLink 
@@ -103,7 +106,8 @@ export function Navigation() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="flex items-center gap-4">
+            {/* Desktop CTA Button */}
+            <div className="hidden md:flex items-center gap-4">
               <Button 
                 size="sm"
                 onClick={() => setEmailModalOpen(true)}
@@ -112,8 +116,65 @@ export function Navigation() {
                 <Sparkles className="ml-2 h-4 w-4" />
               </Button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 rounded-md text-foreground hover:bg-muted"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t bg-background">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <button
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                onClick={() => scrollToSection('features')}
+              >
+                Features
+              </button>
+              <button
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                onClick={() => scrollToSection('dashboard')}
+              >
+                Dashboard
+              </button>
+              <button
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                onClick={() => scrollToSection('social-proof')}
+              >
+                Testimonials
+              </button>
+              <button
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted"
+                onClick={() => scrollToSection('cta')}
+              >
+                Get Started
+              </button>
+              <div className="pt-4 px-3">
+                <Button 
+                  size="sm"
+                  className="w-full"
+                  onClick={() => {
+                    setEmailModalOpen(true)
+                    setMobileMenuOpen(false)
+                  }}
+                >
+                  Get Early Access
+                  <Sparkles className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       <EmailSignupModal 
