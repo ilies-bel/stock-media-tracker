@@ -5,24 +5,52 @@ interface SeasonalPlannerTabProps {}
 
 export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
   return (
-    <div className="p-8 h-full">
-      {/* Interactive 12-Month Calendar */}
+    <div className="p-4 sm:p-6 lg:p-8 h-full">
+      {/* Interactive 6-Month Calendar */}
       <div className="mb-8">
-        <div className="bg-background border-2 border-border rounded-xl p-6">
-          <h3 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3">
-            <Calendar className="w-6 h-6 text-primary" />
+        <div className="bg-background border-2 border-border rounded-xl p-4 sm:p-6">
+          <h3 className="text-lg sm:text-2xl font-bold text-center mb-4 sm:mb-6 flex items-center justify-center gap-2 sm:gap-3">
+            <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             2024 Seasonal Opportunity Calendar
           </h3>
           
-          {/* Mini Calendar Grid */}
-          <div className="grid grid-cols-6 gap-4 mb-6">
+          {/* Mini Calendar Grid - 6 months */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 mb-4 sm:mb-6">
             {[
               { month: 'JAN', current: true, events: 2 },
               { month: 'FEB', events: 3, hot: true },
               { month: 'MAR', events: 2 },
               { month: 'APR', events: 2 },
               { month: 'MAY', events: 1 },
-              { month: 'JUN', events: 1 },
+              { month: 'JUN', events: 1 }
+            ].map((month, index) => (
+              <div
+                key={index}
+                className={`
+                  relative p-2 sm:p-3 rounded-lg text-center cursor-pointer transition-all
+                  ${month.current 
+                    ? 'bg-primary text-primary-foreground shadow-lg ring-2 ring-primary' 
+                    : month.hot 
+                    ? 'bg-red-50 border border-red-200 hover:bg-red-100' 
+                    : 'bg-muted hover:bg-muted/80'
+                  }
+                `}
+              >
+                <div className="font-bold text-xs sm:text-sm">{month.month}</div>
+                <div className="text-[10px] sm:text-xs mt-0.5 sm:mt-1">
+                  {month.events}
+                  <span className="hidden sm:inline"> events</span>
+                </div>
+                {month.hot && (
+                  <div className="absolute -top-1 -right-1 w-2 sm:w-3 h-2 sm:h-3 bg-red-500 rounded-full animate-pulse"></div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Second row for next 6 months */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 mb-4 sm:mb-6">
+            {[
               { month: 'JUL', events: 1 },
               { month: 'AUG', events: 2 },
               { month: 'SEP', events: 2 },
@@ -33,36 +61,37 @@ export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
               <div
                 key={index}
                 className={`
-                  relative p-3 rounded-lg text-center cursor-pointer transition-all
-                  ${month.current 
-                    ? 'bg-primary text-primary-foreground shadow-lg ring-2 ring-primary' 
-                    : month.hot 
+                  relative p-2 sm:p-3 rounded-lg text-center cursor-pointer transition-all
+                  ${month.hot 
                     ? 'bg-red-50 border border-red-200 hover:bg-red-100' 
                     : 'bg-muted hover:bg-muted/80'
                   }
                 `}
               >
-                <div className="font-bold text-sm">{month.month}</div>
-                <div className="text-xs mt-1">{month.events} events</div>
+                <div className="font-bold text-xs sm:text-sm">{month.month}</div>
+                <div className="text-[10px] sm:text-xs mt-0.5 sm:mt-1">
+                  {month.events}
+                  <span className="hidden sm:inline"> events</span>
+                </div>
                 {month.hot && (
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -right-1 w-2 sm:w-3 h-2 sm:h-3 bg-red-500 rounded-full animate-pulse"></div>
                 )}
               </div>
             ))}
           </div>
 
           {/* Legend */}
-          <div className="flex justify-center gap-6 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm">
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="w-2 sm:w-3 h-2 sm:h-3 bg-red-500 rounded-full"></span>
               <span>Hot Opportunities</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="w-2 sm:w-3 h-2 sm:h-3 bg-orange-500 rounded-full"></span>
               <span>Growing Trends</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full"></span>
               <span>Emerging Events</span>
             </div>
           </div>
@@ -211,33 +240,6 @@ export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div className="bg-purple-500 h-2 rounded-full" style={{width: '87%'}}></div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Planning Checklist */}
-          <div className="bg-muted/50 rounded-xl p-6">
-            <h3 className="text-lg font-bold mb-4">Content Planning Checklist</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 p-3 bg-background rounded-lg">
-                <input type="checkbox" defaultChecked className="rounded" />
-                <span className="flex-1">Research Valentine's Day trends</span>
-                <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Done</span>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-background rounded-lg">
-                <input type="checkbox" defaultChecked className="rounded" />
-                <span className="flex-1">Plan romantic couple shoots</span>
-                <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">Done</span>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-background rounded-lg">
-                <input type="checkbox" className="rounded" />
-                <span className="flex-1">Upload by January 15th deadline</span>
-                <span className="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded">Pending</span>
-              </div>
-              <div className="flex items-center gap-3 p-3 bg-background rounded-lg">
-                <input type="checkbox" className="rounded" />
-                <span className="flex-1">Prepare St. Patrick's Day content</span>
-                <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">Later</span>
               </div>
             </div>
           </div>

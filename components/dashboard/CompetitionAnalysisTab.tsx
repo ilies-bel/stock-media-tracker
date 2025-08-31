@@ -5,7 +5,7 @@ interface CompetitionAnalysisTabProps {}
 
 export function CompetitionAnalysisTab({}: CompetitionAnalysisTabProps) {
   return (
-    <div className="p-8 h-full">
+    <div className="p-4 sm:p-6 lg:p-8 h-full">
       {/* Top Performers Leaderboard */}
       <div className="mb-8">
         <h3 className="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-3">
@@ -18,113 +18,89 @@ export function CompetitionAnalysisTab({}: CompetitionAnalysisTabProps) {
         
         <div className="space-y-4">
           {/* #1 PhotoPro_USA */}
-          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl p-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">#1</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-yellow-700" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-yellow-900 flex items-center gap-2">
-                      PhotoPro_USA
-                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-                        Trending
-                      </span>
-                    </h4>
-                    <div className="flex gap-4 text-sm text-yellow-700">
-                      <span>12.4k photos</span>
-                      <span>•</span>
-                      <span>Specializes in: Corporate, Tech</span>
-                    </div>
-                  </div>
+          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-xl p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-yellow-900 flex items-center gap-2">
+                  PhotoPro_USA
+                  <Star className="w-3 sm:w-4 h-3 sm:h-4 text-yellow-500 fill-current" />
+                </h4>
+                <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-yellow-700">
+                  <span>12.4k photos</span>
+                  <span className="hidden sm:inline">•</span>
+                  <span>Specializes in: Corporate, Tech</span>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-yellow-900">$24.5k</div>
-                <div className="text-sm text-yellow-700">monthly revenue</div>
-                <div className="flex items-center gap-1 text-green-600 font-bold">
-                  <TrendingUp className="w-4 h-4" />
-                  +18% growth
+              <div className="flex flex-row items-center justify-between sm:justify-end gap-3 sm:gap-4">
+                <div className="text-left sm:text-right">
+                  <div className="text-2xl sm:text-3xl font-bold text-yellow-900">$24.5k</div>
+                  <div className="text-xs sm:text-sm text-yellow-700">monthly revenue</div>
+                  <div className="flex items-center gap-1 text-green-600 font-bold text-xs sm:text-sm">
+                    <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4" />
+                    +18% growth
+                  </div>
                 </div>
+                <Button variant="outline" size="sm" className="border-yellow-300 hover:bg-yellow-100 text-xs sm:text-sm px-3 sm:px-4">
+                  More Details
+                </Button>
               </div>
             </div>
           </div>
 
           {/* #2 CreativeStock */}
-          <div className="bg-gradient-to-r from-gray-50 to-slate-50 border-2 border-gray-200 rounded-xl p-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">#2</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-gray-700" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                      CreativeStock
-                      <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                        Consistent
-                      </span>
-                    </h4>
-                    <div className="flex gap-4 text-sm text-gray-700">
-                      <span>8.7k photos</span>
-                      <span>•</span>
-                      <span>Specializes in: Lifestyle, Nature</span>
-                    </div>
-                  </div>
+          <div className="bg-gradient-to-r from-gray-50 to-slate-50 border-2 border-gray-200 rounded-xl p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900">
+                  CreativeStock
+                </h4>
+                <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-700">
+                  <span>8.7k photos</span>
+                  <span className="hidden sm:inline">•</span>
+                  <span>Specializes in: Lifestyle, Nature</span>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-gray-900">$18.2k</div>
-                <div className="text-sm text-gray-700">monthly revenue</div>
-                <div className="flex items-center gap-1 text-green-600 font-bold">
-                  <TrendingUp className="w-4 h-4" />
-                  +12% growth
+              <div className="flex flex-row items-center justify-between sm:justify-end gap-3 sm:gap-4">
+                <div className="text-left sm:text-right">
+                  <div className="text-2xl sm:text-3xl font-bold text-gray-900">$18.2k</div>
+                  <div className="text-xs sm:text-sm text-gray-700">monthly revenue</div>
+                  <div className="flex items-center gap-1 text-green-600 font-bold text-xs sm:text-sm">
+                    <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4" />
+                    +12% growth
+                  </div>
                 </div>
+                <Button variant="outline" size="sm" className="border-gray-300 hover:bg-gray-100 text-xs sm:text-sm px-3 sm:px-4">
+                  More Details
+                </Button>
               </div>
             </div>
           </div>
 
           {/* #3 VisualMaster */}
-          <div className="bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl p-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">#3</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-orange-700" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-orange-900 flex items-center gap-2">
-                      VisualMaster
-                      <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full animate-pulse">
-                        Rising Star
-                      </span>
-                    </h4>
-                    <div className="flex gap-4 text-sm text-orange-700">
-                      <span>6.2k photos</span>
-                      <span>•</span>
-                      <span>Last upload: 2 hours ago</span>
-                    </div>
-                  </div>
+          <div className="bg-gradient-to-r from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-orange-900">
+                  VisualMaster
+                </h4>
+                <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-orange-700">
+                  <span>6.2k photos</span>
+                  <span className="hidden sm:inline">•</span>
+                  <span>Last upload: 2 hours ago</span>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-3xl font-bold text-orange-900">$15.1k</div>
-                <div className="text-sm text-orange-700">monthly revenue</div>
-                <div className="flex items-center gap-1 text-green-600 font-bold">
-                  <TrendingUp className="w-4 h-4" />
-                  +25% growth
+              <div className="flex flex-row items-center justify-between sm:justify-end gap-3 sm:gap-4">
+                <div className="text-left sm:text-right">
+                  <div className="text-2xl sm:text-3xl font-bold text-orange-900">$15.1k</div>
+                  <div className="text-xs sm:text-sm text-orange-700">monthly revenue</div>
+                  <div className="flex items-center gap-1 text-green-600 font-bold text-xs sm:text-sm">
+                    <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4" />
+                    +25% growth
+                  </div>
                 </div>
+                <Button variant="outline" size="sm" className="border-orange-300 hover:bg-orange-100 text-xs sm:text-sm px-3 sm:px-4">
+                  More Details
+                </Button>
               </div>
             </div>
           </div>
@@ -205,48 +181,6 @@ export function CompetitionAnalysisTab({}: CompetitionAnalysisTabProps) {
             Market Intelligence
           </h3>
           
-          {/* Gap Analysis */}
-          <div className="bg-muted/50 rounded-xl p-6">
-            <h4 className="font-bold text-lg mb-4">Market Gap Analysis</h4>
-            <div className="space-y-4">
-              <div className="p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border border-red-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-red-900">Missing Style Alert!</span>
-                  <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">High Priority</span>
-                </div>
-                <p className="text-sm text-red-700 mb-3">Dark mode UI mockups - only 12 images exist</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-red-700">Potential Revenue:</span>
-                  <span className="font-bold text-red-900">$2,340/month</span>
-                </div>
-              </div>
-              
-              <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-blue-900">Underserved Niche</span>
-                  <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Medium Priority</span>
-                </div>
-                <p className="text-sm text-blue-700 mb-3">Elderly using technology - growing demand</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-blue-700">Potential Revenue:</span>
-                  <span className="font-bold text-blue-900">$1,680/month</span>
-                </div>
-              </div>
-              
-              <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-semibold text-green-900">Content Opportunity</span>
-                  <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">Low Priority</span>
-                </div>
-                <p className="text-sm text-green-700 mb-3">Sustainable packaging concepts</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-green-700">Potential Revenue:</span>
-                  <span className="font-bold text-green-900">$980/month</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Competitive Intelligence Alerts */}
           <div className="bg-muted/50 rounded-xl p-6">
             <h4 className="font-bold text-lg mb-4">Live Intelligence Alerts</h4>
@@ -277,23 +211,6 @@ export function CompetitionAnalysisTab({}: CompetitionAnalysisTabProps) {
             </div>
           </div>
 
-          {/* Performance Comparison */}
-          <div className="bg-muted/50 rounded-xl p-6">
-            <h4 className="font-bold text-lg mb-4">Your Position vs Top 3</h4>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-sm font-medium">Revenue Potential</span>
-                <span className="text-lg font-bold text-primary">$8.2k/mo</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-3">
-                <div className="bg-gradient-to-r from-primary to-blue-500 h-3 rounded-full" style={{width: '33%'}}></div>
-              </div>
-              <div className="flex justify-between text-xs text-muted-foreground">
-                <span>Current</span>
-                <span>Top Performer: $24.5k</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

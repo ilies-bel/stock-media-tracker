@@ -72,38 +72,38 @@ export function SocialProof() {
                         ))}
                     </div>
 
-                    <div className="mt-16 mx-auto max-w-4xl">
+                    <div className="mt-12 sm:mt-16 mx-auto max-w-4xl px-2 sm:px-0">
                         <div
-                            className="relative rounded-2xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 p-8">
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                            className="relative rounded-xl sm:rounded-2xl bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 p-4 sm:p-6 lg:p-8">
+                            <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
                                 <div
-                                    className="rounded-full bg-background px-4 py-1 text-xs font-medium text-primary border">
+                                    className="rounded-full bg-background px-3 sm:px-4 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium text-primary border">
                                     Limited Early Access
                                 </div>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div className="flex flex-col gap-4 sm:gap-6 text-center sm:text-left">
                                 <div>
-                                    <p className="text-lg font-semibold">
+                                    <p className="text-base sm:text-lg font-semibold">
                                         Spots filling fast
                                     </p>
-                                    <p className="text-muted-foreground mt-1">
-                                        We&#39;re accepting <span className="font-semibold text-foreground">only 500 early adopters</span> to
+                                    <p className="text-sm sm:text-base text-muted-foreground mt-1">
+                                        We&apos;re accepting <span className="font-semibold text-foreground">only 500 early adopters</span> to
                                         ensure quality feedback
                                     </p>
                                 </div>
-                                <div className="text-right">
-                                    <p className={`text-2xl font-bold text-primary transition-all duration-500 ${
+                                <div className="text-center">
+                                    <p className={`text-3xl sm:text-4xl font-bold text-primary transition-all duration-500 ${
                                         isAnimating ? "scale-110 animate-pulse" : ""
                                     }`}>
                                         {creatorCount}
                                     </p>
-                                    <p className="text-sm text-muted-foreground">creators joined</p>
+                                    <p className="text-xs sm:text-sm text-muted-foreground">creators joined</p>
                                 </div>
                             </div>
 
-                            <div className="mt-6">
-                                <div className="flex items-center justify-between text-sm mb-2">
+                            <div className="mt-4 sm:mt-6">
+                                <div className="flex items-center justify-between text-xs sm:text-sm mb-2">
                                     <span className="text-muted-foreground">Early access spots taken</span>
                                     <span className="font-semibold">{percentageFilled}%</span>
                                 </div>

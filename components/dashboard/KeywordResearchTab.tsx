@@ -5,40 +5,40 @@ interface KeywordResearchTabProps {}
 
 export function KeywordResearchTab({}: KeywordResearchTabProps) {
   return (
-    <div className="p-8 h-full">
+    <div className="p-4 sm:p-6 lg:p-8 h-full">
       {/* Keyword Generation Interface */}
       <div className="mb-8">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-muted/50 rounded-xl p-6">
-            <h3 className="text-xl font-bold mb-4 text-center">Generate Platform-Optimized Keywords</h3>
-            <div className="flex gap-4 items-center">
+          <div className="bg-muted/50 rounded-xl p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold mb-4 text-center">Generate Platform-Optimized Keywords</h3>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
               <input
                 type="text"
-                placeholder="Enter your concept or upload an image..."
-                className="flex-1 px-4 py-3 border border-border rounded-lg bg-background text-lg"
-                defaultValue="AI-powered healthcare technology"
+                placeholder="Enter your concept..."
+                className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 border border-border rounded-lg bg-background text-base sm:text-lg"
+                defaultValue="AI-powered healthcare"
               />
-              <Button size="lg" className="px-8">
-                <Sparkles className="w-5 h-5 mr-2" />
-                Generate Keywords
+              <Button size="default" className="w-full sm:w-auto px-4 sm:px-8">
+                <Sparkles className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
+                <span className="sm:inline">Generate Keywords</span>
               </Button>
             </div>
-            <div className="flex gap-4 mt-4 justify-center">
+            <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 justify-center">
               <label className="flex items-center gap-2">
                 <input type="checkbox" defaultChecked className="rounded" />
-                <span className="text-sm">All Platforms</span>
+                <span className="text-xs sm:text-sm">All Platforms</span>
               </label>
               <label className="flex items-center gap-2">
                 <input type="checkbox" defaultChecked className="rounded" />
-                <span className="text-sm">Shutterstock</span>
+                <span className="text-xs sm:text-sm">Shutterstock</span>
               </label>
               <label className="flex items-center gap-2">
                 <input type="checkbox" defaultChecked className="rounded" />
-                <span className="text-sm">Adobe Stock</span>
+                <span className="text-xs sm:text-sm">Adobe Stock</span>
               </label>
               <label className="flex items-center gap-2">
                 <input type="checkbox" defaultChecked className="rounded" />
-                <span className="text-sm">Getty Images</span>
+                <span className="text-xs sm:text-sm">Getty Images</span>
               </label>
             </div>
           </div>
