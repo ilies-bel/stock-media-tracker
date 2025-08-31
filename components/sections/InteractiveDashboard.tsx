@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useMemo} from 'react'
 import {Calendar, Eye, Hash, Target, Users} from 'lucide-react'
 import {EmailSignupModal} from "@/components/EmailSignupModal"
 
@@ -16,7 +16,7 @@ const InteractiveDashboard = () => {
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
     const [emailModalOpen, setEmailModalOpen] = useState(false)
 
-    const features = [
+    const features = useMemo(() => [
         {
             id: 'opportunities',
             label: 'Find Profitable Niches',
@@ -65,7 +65,7 @@ const InteractiveDashboard = () => {
                 {id: 'pattern', text: 'Missing this style!', position: 'right-[50px] top-[520px]'}
             ]
         }
-    ]
+    ], [])
 
     // Auto-play through features
     useEffect(() => {

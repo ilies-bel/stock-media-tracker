@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button"
-import { Upload, AlertCircle } from "lucide-react"
+// No imports needed currently
 
 export function DashboardHeader() {
   return (

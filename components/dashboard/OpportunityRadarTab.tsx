@@ -1,9 +1,7 @@
 import { Search, TrendingUp, Target, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-interface OpportunityRadarTabProps {}
-
-export function OpportunityRadarTab({}: OpportunityRadarTabProps) {
+export function OpportunityRadarTab() {
   return (
     <div className="p-8 h-full">
       {/* Search & Discovery Header */}

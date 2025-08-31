@@ -1,7 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, ReactNode } from "react"
-import { getCreatorCount, getCreatorCountFormatted, getPercentageFilled } from "@/lib/utils/creator-count"
+import { getCreatorCount } from "@/lib/utils/creator-count"
 
 interface SubscriptionContextType {
   creatorCount: string

@@ -26,7 +26,7 @@ export function SolutionPreview() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl text-balance mb-4">
-              See what you're missing in seconds
+              See what you&apos;re missing in seconds
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our AI dashboard reveals the exact keywords and niches that are trending right now, 

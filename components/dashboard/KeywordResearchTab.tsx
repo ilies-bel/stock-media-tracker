@@ -1,9 +1,7 @@
-import { Hash, Globe, BarChart3, Sparkles, TrendingUp } from "lucide-react"
+import { Globe, BarChart3, Sparkles, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-interface KeywordResearchTabProps {}
-
-export function KeywordResearchTab({}: KeywordResearchTabProps) {
+export function KeywordResearchTab() {
   return (
     <div className="p-4 sm:p-6 lg:p-8 h-full">
       {/* Keyword Generation Interface */}

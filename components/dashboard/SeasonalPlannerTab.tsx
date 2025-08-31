@@ -1,9 +1,7 @@
 import { Calendar, Heart, Clover, Leaf, Clock, AlertTriangle, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-interface SeasonalPlannerTabProps {}
-
-export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
+export function SeasonalPlannerTab() {
   return (
     <div className="p-4 sm:p-6 lg:p-8 h-full">
       {/* Interactive 6-Month Calendar */}
@@ -117,7 +115,7 @@ export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
                 <div>
                   <h4 className="font-bold text-red-900 flex items-center gap-2">
                     <Heart className="w-4 h-4 text-red-500" />
-                    Valentine's Day
+                    Valentine&apos;s Day
                   </h4>
                   <p className="text-sm text-red-700">Romance, couples, gifts, hearts</p>
                 </div>
@@ -149,7 +147,7 @@ export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
                 <div>
                   <h4 className="font-bold text-green-900 flex items-center gap-2">
                     <Clover className="w-4 h-4 text-green-500" />
-                    St. Patrick's Day
+                    St. Patrick&apos;s Day
                   </h4>
                   <p className="text-sm text-green-700">Irish culture, green, shamrocks, celebration</p>
                 </div>
@@ -250,7 +248,7 @@ export function SeasonalPlannerTab({}: SeasonalPlannerTabProps) {
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div className="text-center p-3 bg-background rounded-lg">
                 <div className="text-2xl font-bold text-primary">45</div>
-                <div className="text-muted-foreground">Days to Valentine's</div>
+                <div className="text-muted-foreground">Days to Valentine&apos;s</div>
               </div>
               <div className="text-center p-3 bg-background rounded-lg">
                 <div className="text-2xl font-bold text-green-600">3</div>

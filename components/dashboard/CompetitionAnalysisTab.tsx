@@ -1,10 +1,7 @@
 import {AlertCircle, Award, BarChart3, Star, TrendingUp} from "lucide-react"
 import {Button} from "@/components/ui/button"
 
-interface CompetitionAnalysisTabProps {
-}
-
-export function CompetitionAnalysisTab({}: CompetitionAnalysisTabProps) {
+export function CompetitionAnalysisTab() {
     return (
         <div className="p-4 sm:p-6 lg:p-8 h-full">
             {/* Top Performers Leaderboard */}

@@ -50,7 +50,7 @@ export function PainPoints() {
 
           <div className="mt-12 text-center">
             <p className="text-lg text-muted-foreground">
-              There's a better way. Let AI analyze the market for you.
+              There&apos;s a better way. Let AI analyze the market for you.
             </p>
           </div>
         </div>
