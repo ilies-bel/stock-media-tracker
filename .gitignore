@@ -4,11 +4,7 @@
 .idea
 
 # Playwright testing outputs
-/e2e/screenshots/
-/e2e/test-results/
-/e2e/playwright-report/
-/playwright-report/
-/test-results/
+/e2e
 
 # dependencies
 /node_modules
