@@ -19,31 +19,56 @@ interface EmailSignupModalProps {
   onOpenChange: (open: boolean) => void
 }
 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzmX3EIzebhJAkxm4mYLKewHl3v4LcvT5sZtBXRS--ZWNgSW1wJQdL3KHY_ItmP4kU9/exec"
+
 export function EmailSignupModal({ open, onOpenChange }: EmailSignupModalProps) {
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState("")
   const { incrementCount } = useSubscription()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!email) return
+    
     setIsSubmitting(true)
+    setError("")
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setIsSuccess(true)
-    
-    // Increment the count with animation
-    incrementCount()
-    
-    // Reset and close after success
-    setTimeout(() => {
-      setIsSuccess(false)
+    try {
+      // Send data to Google Sheets
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Important for Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          timestamp: new Date().toISOString(),
+          source: 'KeywordLens Landing Page'
+        })
+      })
+
+      // Success - show confirmation message
+      setIsSuccess(true)
       setEmail("")
-      onOpenChange(false)
-    }, 2000)
+      
+      // Increment the count with animation
+      incrementCount()
+      
+      // Reset and close after success
+      setTimeout(() => {
+        setIsSuccess(false)
+        onOpenChange(false)
+      }, 2000)
+
+    } catch (err) {
+      setError("Error during signup. Please try again.")
+      console.error('Error:', err)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -84,13 +109,26 @@ export function EmailSignupModal({ open, onOpenChange }: EmailSignupModalProps) 
               />
             </div>
             
+            {error && (
+              <div className="bg-red-50 border border-red-200 rounded-md p-3">
+                <p className="text-sm text-red-600 font-medium">{error}</p>
+              </div>
+            )}
+            
             <div className="space-y-3">
               <Button 
                 type="submit" 
                 className="w-full" 
-                disabled={isSubmitting}
+                disabled={isSubmitting || !email}
               >
-                {isSubmitting ? "Joining..." : "Join Early Access"}
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Joining...
+                  </>
+                ) : (
+                  "Join Early Access"
+                )}
               </Button>
               
               <p className="text-xs text-center text-muted-foreground">

@@ -17,6 +17,9 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 })
 
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/stock-media-tracker' : '';
+
 export const metadata: Metadata = {
   title: "KeywordLens - Stock Photo Keyword Planner",
   description:
@@ -24,12 +27,12 @@ export const metadata: Metadata = {
   generator: "v0.app",
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' }
+      { url: `${basePath}/favicon.ico` },
+      { url: `${basePath}/icon-192.png`, sizes: '192x192', type: 'image/png' },
+      { url: `${basePath}/icon-512.png`, sizes: '512x512', type: 'image/png' }
     ],
-    shortcut: '/favicon.ico',
-    apple: { url: '/icon-192.png', sizes: '192x192' },
+    shortcut: `${basePath}/favicon.ico`,
+    apple: { url: `${basePath}/icon-192.png`, sizes: '192x192' },
   },
 }
 
